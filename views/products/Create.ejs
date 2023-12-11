@@ -1,0 +1,76 @@
+<%- include("../header") %>
+
+<main class="container my-5">
+  <style>
+    body {
+      padding-top: 56px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <form action="/products/create" method="post">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+    <div>
+      <label for="price">Price</label>
+      <input type="number" id="price" name="price" required />
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+    <div>
+      <input type="submit" value="Create" />
+    </div>
+  </form>
+</main>
+
+<%- include("../footer") %>

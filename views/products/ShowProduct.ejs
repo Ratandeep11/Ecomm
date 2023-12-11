@@ -1,0 +1,61 @@
+<%- include("../header") %>
+
+<main class="container my-5">
+  <style>
+    body {
+      padding-top: 56px;
+    }
+
+    .product-details-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .product-info {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+  </style>
+
+  <% products.forEach((item) => { %>
+
+  <div class="product-details-container">
+    <img src="<%= item.image %>" alt="<%= item.name %>" class="product-image" />
+    <h2 class="mb-4"><%= item.name %></h2>
+
+    <div class="product-info">
+      <p>Description: <%= item.description %></p>
+      <p>Price: <%= item.price %></p>
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+
+  <% }) %>
+</main>
+
+<%- include("../footer") %>
